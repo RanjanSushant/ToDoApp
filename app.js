@@ -25,7 +25,7 @@ function getItems() {
 }
 
 function renderItems(items) {
-  db.collection("todo-items").orderBy("", "desc");
+  db.collection("todo-items").orderBy("date", "desc");
   let itemsHTML = "";
   items.forEach((item) => {
     // console.log(item);
