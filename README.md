@@ -1,2 +1,2 @@
 # ToDoApp
- My to do app with Firebase
+ My to do app using HTML, CSS, Vanilla JavaScript with Firebase
