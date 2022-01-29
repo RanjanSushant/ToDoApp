@@ -2,3 +2,5 @@
 .DS_Store
 .prettierignore
 downloads/
+*.zip
+plan.md
