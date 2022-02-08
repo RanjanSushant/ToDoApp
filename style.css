@@ -4,11 +4,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --dark-bg-color-body: #161722;
+  --dark-bg-color-todo: #25273c;
+  --dark-color-input-placeholder: #4d5066;
+}
+
 body {
   display: flex;
   justify-content: center;
-  font-family: "Josefin Sans", sans-serif;
-  background-color: hsl(235, 21%, 11%);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: #161722;
   font-size: 1.125rem;
 }
 
@@ -52,7 +59,7 @@ body {
 }
 
 .new-todo {
-  background-color: hsl(235, 24%, 19%);
+  background-color: #25273c;
   height: 4.5em;
   margin-top: 3em;
   border-radius: 6px;
@@ -84,19 +91,19 @@ body {
 }
 
 .check-mark:hover,
-.check-mark.checked {
+.check-mark.completed {
   /* border-color: linear-gradient(135deg, #55ddff 0%, #c058f3 100%); */
   background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
 }
 
 .check-mark:hover img,
-.check-mark.checked img {
+.check-mark.completed img {
   visibility: visible;
 }
 
-.todo-text.checked {
+.todo-text.completed {
   text-decoration: line-through;
-  color: hsl(233, 14%, 35%);
+  color: #4d5066;
 }
 
 .new-todo-input {
@@ -116,35 +123,35 @@ body {
   background-color: transparent;
   border: none;
   outline: none;
-  color: hsl(234, 39%, 85%);
+  color: #cacde8;
   font-size: 1.125rem;
 }
 
 .new-todo-input input::-webkit-input-placeholder {
-  color: hsl(233, 14%, 35%);
+  color: #4d5066;
 }
 
 .new-todo-input input::-moz-placeholder {
-  color: hsl(233, 14%, 35%);
+  color: #4d5066;
 }
 
 .new-todo-input input:-ms-input-placeholder {
-  color: hsl(233, 14%, 35%);
+  color: #4d5066;
 }
 
 .new-todo-input input::-ms-input-placeholder {
-  color: hsl(233, 14%, 35%);
+  color: #4d5066;
 }
 
 .new-todo-input input::placeholder {
-  color: hsl(233, 14%, 35%);
+  color: #4d5066;
 }
 
 .todo-item {
   width: 100%;
   height: 70px;
   cursor: pointer;
-  background-color: hsl(235, 24%, 19%);
+  background-color: #25273c;
   display: flex;
   /* align-items: center; */
   border-bottom: 1px solid hsl(237, 14%, 26%);
@@ -154,20 +161,20 @@ body {
 
 .todo-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0px 7px 0px hsl(235, 21%, 11%);
-  border-color: hsl(235, 24%, 19%);
+  box-shadow: 0 0px 7px 0px #161722;
+  border-color: #25273c;
 }
 
 .todo-text {
   display: flex;
   align-items: center;
   font-size: 1.125rem;
-  color: hsl(234, 39%, 85%);
+  color: #cacde8;
 }
 
 .todo-items-wrapper {
   margin-top: 30px;
-  background-color: hsl(235, 24%, 19%);
+  background-color: #25273c;
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.4);
@@ -177,7 +184,7 @@ body {
 .todo-items-info {
   height: 70px;
   width: 100%;
-  color: hsl(233, 14%, 35%);
+  color: #4d5066;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -202,5 +209,68 @@ body {
 .items-statuses span:hover,
 .items-statuses span.active,
 .items-clear:hover {
-  color: hsl(220, 98%, 61%);
+  color: #3a7bfd;
+}
+
+#sign-in,
+#sign-out {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  /* align-items: flex-start; */
+  /* border: 2px solid yellow; */
+  justify-self: flex-start;
+  /* align-content: flex-start; */
+  align-self: flex-start;
+  text-align: end;
+  order: 3;
+  margin-top: 0.2rem;
+}
+
+#sign-in-btn,
+#sign-out-btn {
+  border: none;
+  background-color: #4285f4;
+  padding: 0.5em 0.8em;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: bold;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  align-self: flex-end;
+  /* text-align: center;
+  vertical-align: middle; */
+
+  /* text-align: end; */
+  /* justify-self: flex-end; */
+}
+
+.google-icon {
+  width: 1.5em;
+  background-color: #fff;
+  /* border: 1px solid magenta; */
+  margin-right: 0.5em;
+  padding: 0.2em;
+  font-size: 1.3em;
+}
+
+#sign-in-btn:hover,
+#sign-out-btn:hover {
+  background-color: #1669f2;
+}
+
+#sign-out-btn {
+  display: none;
+}
+
+#user-signed-in {
+  background-color: antiquewhite;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+.theme img {
+  cursor: pointer;
 }

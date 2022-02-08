@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://www.gstatic.com/firebasejs/9.6.5/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.5/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore-compat.js"></script>
+    <script src="./firebase.js"></script>
+    <script defer src="./app.js"></script>
+    <link rel="icon" href="data:," />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -17,11 +24,24 @@
     <div class="background-image">
       <img src="assets/bg-desktop-dark.jpg" />
     </div>
+    <div id="sign-in">
+      <button id="sign-in-btn">
+        <img
+          class="google-icon"
+          src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+        />Sign in with Google
+      </button>
+      <div id="user-signed-out"></div>
+    </div>
+    <div id="sign-out">
+      <div id="user-signed-in"></div>
+      <button id="sign-out-btn">Sign Out</button>
+    </div>
     <div class="container">
       <div class="header">
         <div class="title">TODO</div>
         <div class="theme">
-          <img src="./assets/icon-sun.svg" />
+          <img id="theme-image" src="./assets/icon-sun.svg" />
         </div>
       </div>
       <div class="new-todo">
@@ -33,7 +53,7 @@
             <input
               id="todo-input"
               type="text"
-              placeholder="Create a new todo..."
+              placeholder="✍Create a new todo..."
             />
           </form>
         </div>
@@ -43,9 +63,9 @@
         <div class="todo-items-info">
           <div class="items-left">5 items left</div>
           <div class="items-statuses">
-            <span class="active">All</span>
-            <span>Active</span>
-            <span>Completed</span>
+            <span id="all" class="active">All</span>
+            <span id="active">Active</span>
+            <span id="completed">Completed</span>
           </div>
           <div class="items-clear">
             <span>Clear Completed</span>
@@ -53,15 +73,5 @@
         </div>
       </div>
     </div>
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
-
-      // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
-    </script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="./firebase.js"></script>
-    <script src="app.js"></script>
   </body>
 </html>
